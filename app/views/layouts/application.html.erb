@@ -10,9 +10,33 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
+  <body class="background">
+      <nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <div class="container-fluid">
 
+
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag("Maiden_logo.png", alt: "Maiden Logo") %>
+          <% end %>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <% if user_signed_in? %>
+        <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "button-log-out" %>
+      <% else %>
+        <%= link_to "Log In", new_user_session_path, class: "button-login" %>
+      <% end %>
+              <%= link_to profile_path, class: "navbar-brand" do %>
+            <%= image_tag("Mario.png", alt: "Mario", style: "border-radius: 50%; height: 60px; width: 60px") %>
+          <% end %>
+          </div>
+        </div>
+      </nav>
+  </div>
+
+    <%= render "shared/flashes" %>
     <%= yield %>
   </body>
 </html>
