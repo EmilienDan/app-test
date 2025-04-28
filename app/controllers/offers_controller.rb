@@ -5,6 +5,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+    @offers = [] if @offers.nil?
   end
 
   def show; end
