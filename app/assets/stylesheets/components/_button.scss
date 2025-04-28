@@ -22,3 +22,24 @@
   background-color: #ECFD01;
   color: black;
 }
+
+.button_more {
+  border: 2px solid #FFFFFF;
+  border-radius: 50px;
+  color: white;
+  width: 210px;
+  height: 50px;
+  padding: 14px 32px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  background-color: #6050EE;
+}
+
+.button_more:hover {
+  background-color: white;
+  color: #6050EE;
+}
