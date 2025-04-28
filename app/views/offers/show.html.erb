@@ -1,10 +1,9 @@
 <div class= "mb-3">
 <%= @offer.photo.attached? ? image_tag(@offer.photo, style: "height: 248px; width: 248px; object-fit: cover; border-radius: 10px; margin: auto") : image_tag(@offer.photo_url, style: "height: 248px; width: 248px; object-fit: cover; border-radius: 10px; margin: auto") %>
 </div>
-<h4><b><%= @offer.name %></b></h4>
-<p><%= @offer.offer_type %></p>
+<h4><b><%= @offer.hotel_name %></b></h4>
 <p><%= @offer.description %></p>
-<p><%= @offer.area %></p>
+<p><%= @offer.location %></p>
 <div class= "mb-3">
 <h4><b><%= @offer.price %> €</b></h4>
 </div>

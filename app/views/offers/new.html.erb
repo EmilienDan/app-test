@@ -1,0 +1,11 @@
+<div class= "mt-4">
+  <%= simple_form_for(@offer) do |f| %>
+    <%= f.input :hotel_name, placeholder: "Enter the place name" %>
+    <%= f.input :description, placeholder: "Describe your offer" %>
+    <%= f.input :price, placeholder: "Enter the price (€)" %>
+    <%= f.input :location, placeholder: "Enter the area (e.g. Paris, Lyon...)" %>
+    <%= f.input :photo_url, placeholder: "Enter an image URL" %>
+    <%= f.button :submit, "Create Offer" %>
+  <% end %>
+</div>
+<%= link_to "Cancel", offers_path, class: "btn btn-secondary" %>

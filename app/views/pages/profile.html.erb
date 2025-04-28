@@ -1,12 +1,13 @@
 <h1>Profile</h1>
 
+<%= image_tag "Mario.png", class: "rounded-circle border-picture", width: 124, height: 124, style: "object-fit: cover" %>
 <h3><%= current_user.email %></h3>
 
 <h2>My bookings</h2>
 <% @my_bookings.group_by(&:offer_id).each do |offer_id, bookings| %>
   <% bookings.each do |booking| %>
     <p>
-      <%= link_to "#{booking.offer.name} - #{booking.offer.offer_type} - #{booking.offer.price}", offer_path(booking.offer) %>
+      <%= link_to "#{booking.offer.hotel_name} - #{booking.offer.price}", offer_path(booking.offer) %>
       <span>Status: <%= booking.status.capitalize %></span>
     </p>
   <% end %>
